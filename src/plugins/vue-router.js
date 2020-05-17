@@ -11,6 +11,6 @@ export default new VueRouter({
   mode: 'history',
   routes: [
     { path: '', component: Home },
-    { path: '/movies', component: MovieFinder }
-  ]
+    { path: '/movies', component: MovieFinder },
+  ],
 });

@@ -1,0 +1,15 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Toast Config */
+
+.toast-text {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  padding: 10px 20px !important;
+}
+
+.toast-close {
+  color: #fff !important;
+}

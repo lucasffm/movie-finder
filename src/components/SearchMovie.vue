@@ -14,7 +14,9 @@
         </v-text-field>
       </v-col>
     </v-row>
-    <v-row align="center" justify="center"> </v-row>
+    <v-row v-if="!movies.length && searched" align="center" justify="center">
+      <p>Sorry, 0 movies found!</p>
+    </v-row>
     <v-row v-if="movies.length && !isLoading">
       <movie-card
         v-for="(item, index) in movies"
@@ -31,22 +33,22 @@ import { mapState } from 'vuex';
 import MovieCard from '../components/MovieCard';
 export default {
   components: {
-    MovieCard
+    MovieCard,
   },
   data() {
     return {
       searchTerm: '',
-      search: null
+      search: null,
     };
   },
-  computed: mapState(['movies', 'isLoading']),
+  computed: mapState(['movies', 'isLoading', 'searched']),
   methods: {
     searchMovie() {
       if (this.isLoading || this.searchTerm.length < 4) return;
       this.$store.dispatch('searchMovie', this.searchTerm);
       this.searchTerm = '';
-    }
-  }
+    },
+  },
 };
 </script>
 

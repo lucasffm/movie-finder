@@ -9,8 +9,8 @@ import SearchMovie from '../components/SearchMovie.vue';
 
 export default {
   components: {
-    SearchMovie
-  }
+    SearchMovie,
+  },
 };
 </script>
 

@@ -1,10 +1,10 @@
 import Axios from 'axios';
 
 const axios = Axios.create({
-  baseURL: 'https://api.themoviedb.org/4'
+  baseURL: 'https://api.themoviedb.org/4',
 });
 
-axios.interceptors.request.use(config => {
+axios.interceptors.request.use((config) => {
   const apiKey = process.env.VUE_APP_MOVIEDB_API_KEY;
   config.params = config.params || {};
   config.params['api_key'] = apiKey;

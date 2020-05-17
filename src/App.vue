@@ -18,13 +18,13 @@ import Sidenav from './components/Sidenav.vue';
 export default {
   name: 'App',
   components: {
-    Sidenav
+    Sidenav,
   },
   data() {
     return {
-      drawer: true
+      drawer: true,
     };
-  }
+  },
 };
 </script>
 <style lang="css" scoped>
