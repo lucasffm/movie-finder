@@ -20,15 +20,15 @@
 
 <script>
 export default {
-  props: ["drawer"],
+  props: ['drawer'],
   data() {
     return {
       items: [
-        { label: "Home", icon: "mdi-home", route: "/" },
-        { label: "Movie Finder", icon: "search", route: "movies" },
-      ],
+        { label: 'Home', icon: 'mdi-home', route: '/' },
+        { label: 'Movie Finder', icon: 'search', route: 'movies' }
+      ]
     };
-  },
+  }
 };
 </script>
 

@@ -26,27 +26,27 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState } from 'vuex';
 
-import MovieCard from "../components/MovieCard";
+import MovieCard from '../components/MovieCard';
 export default {
   components: {
-    MovieCard,
+    MovieCard
   },
   data() {
     return {
-      searchTerm: "",
-      search: null,
+      searchTerm: '',
+      search: null
     };
   },
-  computed: mapState(["movies", "isLoading"]),
+  computed: mapState(['movies', 'isLoading']),
   methods: {
     searchMovie() {
       if (this.isLoading || this.searchTerm.length < 4) return;
-      this.$store.dispatch("searchMovie", this.searchTerm);
-      this.searchTerm = "";
-    },
-  },
+      this.$store.dispatch('searchMovie', this.searchTerm);
+      this.searchTerm = '';
+    }
+  }
 };
 </script>
 

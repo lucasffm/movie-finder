@@ -1,16 +1,16 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
+import Vue from 'vue';
+import VueRouter from 'vue-router';
 
 // Pages
-import Home from "../pages/Home.vue";
-import MovieFinder from "../pages/MovieFinder.vue";
+import Home from '../pages/Home.vue';
+import MovieFinder from '../pages/MovieFinder.vue';
 
 Vue.use(VueRouter);
 
 export default new VueRouter({
-  mode: "history",
+  mode: 'history',
   routes: [
-    { path: "", component: Home },
-    { path: "/movies", component: MovieFinder },
-  ],
+    { path: '', component: Home },
+    { path: '/movies', component: MovieFinder }
+  ]
 });

@@ -26,12 +26,12 @@
 
 <script>
 export default {
-  props: ["movie"],
+  props: ['movie'],
   computed: {
     image() {
       return `https://image.tmdb.org/t/p/w500/${this.movie.poster_path}`;
-    },
-  },
+    }
+  }
 };
 </script>
 
