@@ -1,7 +1,7 @@
 <template>
   <v-container class="fill-height" fluid>
     <v-row align="center" justify="center">
-      <v-col cols="6" class="text-center">
+      <v-col lg="6" :md="12" class="text-center">
         <h1>Procure por filmes...</h1>
         <v-text-field
           label="Nome do filme"

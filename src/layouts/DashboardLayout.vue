@@ -10,9 +10,13 @@
     </v-app-bar>
 
     <v-content>
-      <Sidenav></Sidenav>
-      <v-container>
-        <slot />
+      <Sidenav :drawer="drawer"></Sidenav>
+      <v-container fluid>
+        <v-row>
+          <v-col cols="12">
+            <slot />
+          </v-col>
+        </v-row>
       </v-container>
     </v-content>
   </div>
@@ -25,6 +29,12 @@ export default {
   components: {
     Sidenav,
   },
+  data() {
+    return {
+      drawer: false,
+    };
+  },
+
   methods: {
     doLogout() {
       this.$store.dispatch('auth/doLogout');

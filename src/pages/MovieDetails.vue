@@ -62,7 +62,10 @@ export default {
         return this.movie.genres.map((genre) => genre.name).join(', ');
       else return '';
     },
-    ...mapState(['movie', 'isLoading']),
+    ...mapState('movies', {
+      movie: ({ movie }) => movie,
+      isLoading: ({ isLoading }) => isLoading,
+    }),
   },
 };
 </script>
