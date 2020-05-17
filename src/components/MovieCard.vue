@@ -17,7 +17,7 @@
       {{ movie.overview | truncate(100) }}
     </v-card-text>
     <v-card-actions d-flex align-end>
-      <v-btn color="orange" text to="/">
+      <v-btn color="orange" text :to="`movies/${movie.id}`">
         Mais Informações
       </v-btn>
     </v-card-actions>

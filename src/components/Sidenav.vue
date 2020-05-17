@@ -25,7 +25,7 @@ export default {
     return {
       items: [
         { label: 'Home', icon: 'mdi-home', route: '/' },
-        { label: 'Movie Finder', icon: 'search', route: 'movies' },
+        { label: 'Movie Finder', icon: 'search', route: '/movies' },
       ],
     };
   },
