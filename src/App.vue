@@ -1,28 +1,35 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app id="inspire">
+    <v-app-bar app color="indigo" dark>
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-toolbar-title>Movie Finder</v-toolbar-title>
+    </v-app-bar>
+    <Sidenav :drawer="drawer"></Sidenav>
+
+    <v-content>
+      <router-view class="view"></router-view>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Sidenav from "./components/Sidenav.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    Sidenav,
+  },
+  data() {
+    return {
+      drawer: true,
+    };
+  },
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="css" scoped>
+a {
+  text-decoration: none;
+  color: white !important;
 }
 </style>
