@@ -32,6 +32,7 @@ Vue.use(Toasted, {
 
 store.$axios = axios;
 store.$toast = Vue.toasted;
+store.$router = router;
 
 new Vue({
   vuetify,

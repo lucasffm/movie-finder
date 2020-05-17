@@ -5,7 +5,13 @@
 </template>
 
 <script>
-export default {};
+import DashboardLayout from '../layouts/DashboardLayout.vue';
+
+export default {
+  created() {
+    this.$emit('update:layout', DashboardLayout);
+  },
+};
 </script>
 
 <style></style>

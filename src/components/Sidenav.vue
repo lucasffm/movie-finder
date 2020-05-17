@@ -1,6 +1,6 @@
 <template>
-  <v-navigation-drawer v-model="drawer" app>
-    <v-list dense>
+  <v-navigation-drawer app mini-variant expand-on-hover>
+    <v-list>
       <v-list-item
         link
         v-for="(item, index) in items"
@@ -24,7 +24,7 @@ export default {
   data() {
     return {
       items: [
-        { label: 'Home', icon: 'mdi-home', route: '/' },
+        { label: 'Home', icon: 'mdi-home', route: '/home' },
         { label: 'Movie Finder', icon: 'search', route: '/movies' },
       ],
     };

@@ -6,7 +6,7 @@
     <v-row v-if="movie">
       <v-col cols="12" d-flex direction="row" align="start" justify="start">
         <v-row>
-          <v-col cols="3">
+          <v-col cols="3" v-if="image">
             <v-img
               class="white--text align-end mr-4"
               max-width="100%"
@@ -37,25 +37,30 @@
 
 <script>
 import { mapState } from 'vuex';
-import { getYear } from 'date-fns';
+import releaseDate from '../shared/mixins/releaseDate';
+import DashboardLayout from '../layouts/DashboardLayout.vue';
 
 export default {
+  mixins: [releaseDate],
+
   created() {
+    this.$emit('update:layout', DashboardLayout);
     const { id } = this.$route.params;
-    this.$store.dispatch('searchMovieById', id);
+    this.$store.dispatch('movies/searchMovieById', id);
   },
   beforeDestroy() {
     this.$store.commit('CLEAR_MOVIE');
   },
   computed: {
     image() {
-      return `https://image.tmdb.org/t/p/w500/${this.movie.poster_path}`;
-    },
-    releaseDate() {
-      return getYear(new Date(this.movie.release_date));
+      if (this.movie.poster_path)
+        return `https://image.tmdb.org/t/p/w500${this.movie.poster_path}`;
+      else return null;
     },
     genres() {
-      return this.movie.genres.map((genre) => genre.name).join(', ');
+      if (this.movie.genres)
+        return this.movie.genres.map((genre) => genre.name).join(', ');
+      else return '';
     },
     ...mapState(['movie', 'isLoading']),
   },
